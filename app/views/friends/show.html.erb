@@ -1,10 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @friend %>
-
-<div>
-  <%= link_to "Edit this friend", edit_friend_path(@friend) %> |
-  <%= link_to "Back to friends", friends_path %>
-
-  <%= button_to "Destroy this friend", @friend, method: :delete %>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= friend.first_name %> <%= friend.last_name %></h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Email: <%= friend.email %></li>
+    <li class="list-group-item">Phone: <%= friend.phone %></li>
+    <li class="list-group-item">Twitter: <%= friend.twitter %></li>
+  </ul>
+  <div class="card-body">
+    <%= link_to 'Edit', edit_friend_path(friend) %>
+    <%= link_to 'Delete', friend, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
 </div>
