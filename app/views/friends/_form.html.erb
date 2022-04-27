@@ -22,7 +22,7 @@
     </div>
     <div class="col-12">
       <%= form.label :email, class:"form-label" %>
-      <%= form.text_field :email, class:"form-control", placeholder:"Your best email" %>
+      <%= form.text_field :email, class:"form-control", placeholder:"Friend email" %>
     </div>
     <div class="col-md-6">
       <%= form.label :phone, class:"form-label" %>
@@ -30,9 +30,11 @@
     </div>
     <div class="col-md-6">
       <%= form.label :twitter, class:"form-label" %>
-      <%= form.text_field :twitter, class:"form-control", placeholder:"@your_twitter" %>
+      <%= form.text_field :twitter, class:"form-control", placeholder:"@friend_twitter" %>
     </div>
-    <br/>
+    <div class="col-md-12">
+      <%= form.number_field :user_id, id: :friend_user_id, class:"form-control", value: current_user.id, type: :hidden %>
+    </div>
     <div class="col-12 actions">
       <%= form.submit class:'btn btn-success'%>
     </div>
